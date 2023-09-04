@@ -46,7 +46,7 @@ const Navbar = () => {
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Box>Store Logo</Box>
+          <Box color={useColorModeValue("gray.700", "white")}>Store Logo</Box>
 
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>

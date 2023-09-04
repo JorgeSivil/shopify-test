@@ -12,8 +12,10 @@ const getProductBySlug = async (slug: string): Promise<Product | null> => {
       return mapProduct(response.data.products[0]);
     }
 
+    console.log('Product with slug "' + slug + '" not found');
     return null;
   } catch (error) {
+    console.log('Error getting product with slug "' + slug + '"', error);
     return null;
   }
 };
@@ -26,7 +28,6 @@ function mapProduct(product: any): Product {
     width: image.width || 0,
     height: image.height || 0,
   }));
-
   const options = product.options.map((option) => ({
     id: option.id || "",
     name: option.name || "",

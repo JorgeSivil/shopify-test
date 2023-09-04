@@ -39,8 +39,8 @@ const ProductPage = ({ product }: { product: Product }) => {
 
   return (
     <Container maxWidth="1400px">
-      <Flex paddingTop={6}>
-        <Box maxWidth={600}>
+      <Flex paddingTop={6} flexDirection={["column", "column", "row"]}>
+        <Box maxWidth={'container.md'}>
           {product.images.length > 1 && (
             <Carousel
               slides={productImagesToCarousel(product.images)}
@@ -57,7 +57,7 @@ const ProductPage = ({ product }: { product: Product }) => {
             />
           )}
         </Box>
-        <Flex flexDirection="column" paddingLeft={6} flexGrow={1}>
+        <Flex flexDirection="column" paddingLeft={[0, 0, 6]} marginTop={[3, 3, 0]} flexGrow={1}>
           <Heading as="h1" size="4xl" noOfLines={1} width="full">
             {product.title}
           </Heading>
